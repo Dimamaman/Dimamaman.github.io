@@ -3,68 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dimamaman — Mobile Developer</title>
-<meta name="description" content="Android (Kotlin) va Flutter dasturchi portfoliosi">
+<title>Mamanov Dinmuhammad — Flutter Developer</title>
+<meta name="description" content="Mamanov Dinmuhammad — 4+ yillik tajribaga ega Flutter va Android dasturchi. App Store va Google Play'da chiqarilgan ilovalar.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0d1117; --card:#161b22; --line:#262d36; --text:#e6edf3; --muted:#8b949e;
-    --accent:#3ddc84; --accent2:#54c5f8;
+    --bg:#0b0f14; --card:#131a22; --card2:#18212b; --line:#243040; --text:#e8eef5; --muted:#8a97a8;
+    --accent:#54c5f8; --accent2:#3ddc84;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 
-  nav{position:sticky;top:0;background:rgba(13,17,23,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+  nav{position:sticky;top:0;background:rgba(11,15,20,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}
   nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
-  .logo{font-family:'JetBrains Mono',monospace;color:var(--accent)}
-  nav ul{display:flex;gap:22px;list-style:none;font-size:.95rem;color:var(--muted)}
+  .logo{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.95rem}
+  nav ul{display:flex;gap:22px;list-style:none;font-size:.92rem;color:var(--muted)}
   nav ul a:hover{color:var(--text)}
 
-  header{padding:110px 0 90px}
+
+  .nav-right{display:flex;align-items:center;gap:22px}
+  .lang-sw{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .lang-sw button{background:none;border:0;color:var(--muted);font:500 .78rem 'JetBrains Mono',monospace;padding:6px 9px;cursor:pointer;transition:.2s}
+  .lang-sw button:hover{color:var(--text)}
+  .lang-sw button.on{background:var(--accent);color:#0b0f14}
+  h1 .nm{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--text)}
+  header.wrap{padding:100px 20px 80px;position:relative}
+  header::before{content:'';position:absolute;top:-100px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(84,197,248,.14),transparent 65%);pointer-events:none}
   .tag{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.9rem;margin-bottom:14px}
-  h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.4rem,6vw,4rem);line-height:1.1;margin-bottom:18px}
+  h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.3rem,6vw,4rem);line-height:1.08;margin-bottom:18px}
   h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  header p{color:var(--muted);max-width:560px;font-size:1.1rem;margin-bottom:32px}
+  header p{color:var(--muted);max-width:580px;font-size:1.1rem;margin-bottom:30px}
   .btns{display:flex;gap:12px;flex-wrap:wrap}
-  .btn{padding:12px 22px;border-radius:8px;font-weight:500;border:1px solid var(--line);transition:.2s}
-  .btn.primary{background:var(--accent);color:#0d1117;border-color:var(--accent)}
+  .btn{padding:12px 22px;border-radius:9px;font-weight:500;border:1px solid var(--line);transition:.2s}
+  .btn.primary{background:var(--accent);color:#0b0f14;border-color:var(--accent)}
   .btn:hover{transform:translateY(-2px)}
 
-  section{padding:70px 0;border-top:1px solid var(--line)}
-  h2{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;margin-bottom:28px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .stat b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.8rem;color:var(--accent)}
+  .stat span{color:var(--muted);font-size:.88rem}
+
+  section{padding:80px 0;border-top:1px solid var(--line)}
+  h2{font-family:'Space Grotesk',sans-serif;font-size:1.9rem;margin-bottom:10px}
   h2::before{content:'// ';color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:1.2rem}
+  .sub{color:var(--muted);margin-bottom:36px}
 
-  .about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
-  .about p{color:var(--muted);margin-bottom:14px}
-  .skills{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
-  .skills span{font-family:'JetBrains Mono',monospace;font-size:.82rem;padding:6px 12px;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+  /* Projects */
+  .projects{display:flex;flex-direction:column;gap:22px}
+  .app{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:center;transition:.25s}
+  .app:hover{border-color:rgba(84,197,248,.5)}
+  .app-head{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+  .icon{width:64px;height:64px;border-radius:15px;flex-shrink:0;background:var(--card2);border:1px solid var(--line);object-fit:cover}
+  .icon.ph{display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:1.4rem;color:#0b0f14;background:linear-gradient(135deg,var(--accent2),var(--accent))}
+  .app h3{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;line-height:1.2}
+  .meta{font-size:.82rem;color:var(--muted)}
+  .badge{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 9px;border-radius:20px;background:rgba(61,220,132,.13);color:var(--accent2);margin-left:6px;vertical-align:middle}
+  .app ul{list-style:none;margin:12px 0 18px}
+  .app li{color:var(--muted);font-size:.92rem;padding-left:18px;position:relative;margin-bottom:6px}
+  .app li::before{content:'▹';position:absolute;left:0;color:var(--accent)}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+  .stack span{font-family:'JetBrains Mono',monospace;font-size:.72rem;padding:3px 9px;border-radius:5px;background:var(--card2);border:1px solid var(--line)}
+  .stores{display:flex;gap:10px;flex-wrap:wrap}
+  .store{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:9px;background:#000;border:1px solid #3a4553;font-size:.82rem;font-weight:500;transition:.2s}
+  .store:hover{border-color:var(--accent)}
+  .store svg{width:17px;height:17px;fill:currentColor}
+  .shots{display:flex;gap:12px;justify-content:center}
+  .shots img{width:31%;max-width:150px;aspect-ratio:9/19.5;object-fit:cover;object-position:top;border-radius:14px;border:1px solid var(--line);background:var(--card2)}
+  .shots img:nth-child(2){transform:translateY(-12px)}
+  .shots.empty{height:100%;min-height:200px;align-items:center;border:1px dashed var(--line);border-radius:14px;color:var(--muted);font-size:.9rem}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;transition:.2s}
-  .card:hover{border-color:var(--accent);transform:translateY(-3px)}
-  .card h3{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;margin-bottom:8px}
-  .card p{color:var(--muted);font-size:.93rem;flex:1;margin-bottom:16px}
-  .lang{font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:6px}
-  .dot{width:10px;height:10px;border-radius:50%}
-  .kotlin{background:#a97bff}.dart{background:#00b4ab}
+  /* Experience */
+  .timeline{position:relative;padding-left:28px}
+  .timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--line)}
+  .job{position:relative;margin-bottom:34px}
+  .job::before{content:'';position:absolute;left:-28px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+  .job .when{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--accent)}
+  .job h3{font-family:'Space Grotesk',sans-serif;font-size:1.2rem}
+  .job .co{color:var(--muted);font-size:.93rem;margin-bottom:6px}
+  .job p{color:var(--muted);font-size:.93rem}
 
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .sk{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .sk h4{font-size:.9rem;margin-bottom:12px;color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chips span{font-family:'JetBrains Mono',monospace;font-size:.76rem;padding:4px 10px;border-radius:6px;background:var(--card2);border:1px solid var(--line)}
+
+  /* Contact */
   .contact{text-align:center}
-  .contact p{color:var(--muted);margin-bottom:28px}
-  .socials{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-  .socials a{display:flex;align-items:center;gap:8px;padding:11px 20px;border:1px solid var(--line);border-radius:8px;background:var(--card);transition:.2s}
+  .contact .sub{margin-bottom:30px}
+  .socials{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+  .socials a{display:flex;align-items:center;gap:9px;padding:12px 20px;border:1px solid var(--line);border-radius:10px;background:var(--card);transition:.2s;font-size:.95rem}
   .socials a:hover{border-color:var(--accent);color:var(--accent)}
   .socials svg{width:18px;height:18px;fill:currentColor}
 
   footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0;border-top:1px solid var(--line)}
 
-  @media(max-width:680px){
-    nav ul{gap:14px;font-size:.85rem}
-    .about{grid-template-columns:1fr}
-    header{padding:70px 0 60px}
+  @media(max-width:780px){
+    nav ul{display:none}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .app{grid-template-columns:1fr;padding:20px}
+    .shots{order:-1}
+    header.wrap{padding:70px 20px 70px}
   }
 </style>
 </head>
@@ -72,100 +116,534 @@
 
 <nav>
   <div class="wrap">
-    <a href="#" class="logo">&lt;Dimamaman /&gt;</a>
+    <a href="#" class="logo">&lt;Dinmuhammad /&gt;</a>
+    <div class="nav-right">
     <ul>
-      <li><a href="#about">Men haqimda</a></li>
-      <li><a href="#projects">Loyihalar</a></li>
-      <li><a href="#contact">Aloqa</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Loyihalar</a></li>
+      <li><a href="#experience" data-i18n="nav.exp">Tajriba</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Ko'nikmalar</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Aloqa</a></li>
     </ul>
+    <div class="lang-sw" role="group" aria-label="Language">
+      <button data-lang="uz">UZ</button><button data-lang="ru">RU</button><button data-lang="en">EN</button>
+    </div>
+    </div>
   </div>
 </nav>
 
 <header class="wrap">
-  <div class="tag">Salom, men —</div>
-  <h1>Dimamaman<br><span>Mobile Developer</span></h1>
-  <p>Kotlin va Flutter'da toza arxitekturali, tez va qulay mobil ilovalar yarataman.</p>
+  <div class="tag" data-i18n="hero.tag">Salom, men —</div>
+  <h1><span class="nm" data-i18n="_name">Mamanov Dinmuhammad</span><br><span>Flutter Developer</span></h1>
+  <p data-i18n="hero.p">Mobil ilovalar yaratishni yaxshi ko'raman: g'oyani har kuni odamlar foydalanadigan haqiqiy ilovaga aylantiraman. 4 yildan ortiq tajriba, App Store va Google Play'da chiqarilgan o'nga yaqin ilova.</p>
   <div class="btns">
-    <a href="#projects" class="btn primary">Loyihalarni ko'rish</a>
-    <a href="#contact" class="btn">Bog'lanish</a>
+    <a href="#projects" class="btn primary" data-i18n="hero.btn1">Loyihalarni ko'rish</a>
+    <a href="https://t.me/dimamamann" target="_blank" class="btn" data-i18n="hero.btn2">Telegram'da yozish</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>4+</b><span data-i18n="st.1">yillik tajriba</span></div>
+    <div class="stat"><b>9</b><span data-i18n="st.2">chiqarilgan ilova</span></div>
+    <div class="stat"><b>3K+</b><span data-i18n="st.3">faol foydalanuvchi (Noor)</span></div>
+    <div class="stat"><b>Top</b><span>US Health &amp; Fitness (Pill Plan)</span></div>
   </div>
 </header>
 
-<section id="about">
-  <div class="wrap">
-    <h2>Men haqimda</h2>
-    <div class="about">
-      <div>
-        <p>Men Android va Flutter dasturchisiman. Clean Architecture, MVVM va BLoC kabi yondashuvlar bilan kengaytirish oson bo'lgan ilovalar yozishni yoqtiraman.</p>
-        <p>Bank ilovalari, musiqa pleyer, xaritali yetkazib berish ilovalari va boshqa loyihalar ustida ishlaganman. Doim yangi texnologiyalarni o'rganib boraman.</p>
-      </div>
-      <div class="skills">
-        <span>Kotlin</span><span>Dart</span><span>Flutter</span><span>Android SDK</span>
-        <span>MVVM</span><span>Clean Architecture</span><span>Coroutines / Flow</span>
-        <span>Retrofit</span><span>Dio</span><span>BLoC</span><span>Room / Floor</span>
-        <span>GetIt</span><span>Yandex Maps</span><span>NDK</span><span>Git</span>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- ============ LOYIHALAR ============ -->
 <section id="projects">
   <div class="wrap">
-    <h2>Loyihalar</h2>
-    <div class="grid">
-      <a class="card" href="https://github.com/Dimamaman/Mobile-Banking" target="_blank">
-        <h3>Mobile Banking</h3>
-        <p>Clean Architecture, MVVM, Flow va Retrofit asosida qurilgan mobil bank ilovasi.</p>
-        <div class="lang"><span class="dot kotlin"></span>Kotlin</div>
-      </a>
-      <a class="card" href="https://github.com/Dimamaman/Flutter-Max-Way" target="_blank">
-        <h3>Flutter Max Way</h3>
-        <p>Ovqat yetkazib berish ilovasi: Dio, BLoC, Yandex Maps, GetIt va Floor.</p>
-        <div class="lang"><span class="dot dart"></span>Dart</div>
-      </a>
-      <a class="card" href="https://github.com/Dimamaman/Music-Player" target="_blank">
-        <h3>Music Player</h3>
-        <p>Custom view, foreground service va bildirishnoma orqali boshqariladigan musiqa pleyer.</p>
-        <div class="lang"><span class="dot kotlin"></span>Kotlin</div>
-      </a>
-      <a class="card" href="https://github.com/Dimamaman/Multi-Module" target="_blank">
-        <h3>Multi-Module</h3>
-        <p>Ko'p modulli Android loyiha arxitekturasi namunasi.</p>
-        <div class="lang"><span class="dot kotlin"></span>Kotlin</div>
-      </a>
-      <a class="card" href="https://github.com/Dimamaman/My-Broadcast" target="_blank">
-        <h3>My Broadcast</h3>
-        <p>Android'da Broadcast Receiver va bildirishnomalar bilan ishlash.</p>
-        <div class="lang"><span class="dot kotlin"></span>Kotlin</div>
-      </a>
-      <a class="card" href="https://github.com/Dimamaman/NDK" target="_blank">
-        <h3>NDK</h3>
-        <p>Android NDK orqali native (C/C++) kodni Kotlin bilan bog'lash.</p>
-        <div class="lang"><span class="dot kotlin"></span>Kotlin</div>
-      </a>
+    <h2 data-i18n="nav.projects">Loyihalar</h2>
+    <p class="sub" data-i18n="sec.projects.sub">Men ishlab chiqqan va do'konlarda chiqargan ilovalar.</p>
+
+    <div class="projects">
+
+      <!-- Noor -->
+      <div class="app">
+        <div>
+          <div class="app-head">
+            <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d2/85/bb/d285bbdf-de5f-eb2b-471c-a08659ce0d16/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="Noor" loading="lazy">
+            <div><h3>Noor</h3><div class="meta" data-i18n="noor.meta">Yetkazib berish va kargo · Noor</div></div>
+          </div>
+          <ul>
+            <li data-i18n="noor.1">Multi-module arxitektura (feature modullar + umumiy paketlar), BLoC va Dio.</li>
+            <li data-i18n="noor.2">Kargo modulini noldan qurdim: buyurtmalar, marshrut hisoblash, WebSocket orqali real-time kuzatuv.</li>
+            <li data-i18n="noor.3">To'lov va xarita xizmatlari, offline rejim, FCM push bildirishnomalar.</li>
+            <li data-i18n="noor.4">Noor Client 2.1K+, Noor Delivery ~1K faol foydalanuvchi.</li>
+          </ul>
+          <div class="stack"><span>BLoC</span><span>Dio</span><span>WebSocket</span><span>Maps</span><span>FCM</span><span>Platform channels</span></div>
+          <div class="stores">
+            <a class="store" href="https://apps.apple.com/uz/app/noor%E3%85%A4/id6737517568" target="_blank"><svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9s-2-.9-3.3-.9C6.1 6.9 4.6 7.9 3.7 9.4 2 12.4 3.3 16.9 5 19.3c.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8 2.1-1.2 2.9-2.4c.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-.9-2.4-3.9zM14 5.2c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3z"/></svg>App Store</a>
+            <a class="store" href="https://play.google.com/store/apps/details?id=app.buchet.go" target="_blank"><svg viewBox="0 0 24 24"><path d="M3.6 1.8c-.3.3-.4.7-.4 1.2v18c0 .5.1.9.4 1.2l.1.1L13.8 12v-.2L3.7 1.7l-.1.1zM17.2 15.4l-3.4-3.4v-.2l3.4-3.4.1.1 4 2.3c1.1.6 1.1 1.7 0 2.3l-4 2.3h-.1zM17.3 15.3 13.8 12 3.6 22.2c.4.4 1 .4 1.7.1l12-6.9M17.3 8.7 5.3 1.8c-.7-.4-1.3-.4-1.7.1L13.8 12l3.5-3.3z"/></svg>Google Play</a>
+          </div>
+        </div>
+        <div class="shots">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/c9/74/b7c974ef-9b47-e3dc-f326-a113ec25ae09/Main_page3x.jpg/392x696bb.jpg" alt="Noor ekran" loading="lazy">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/61/d2/53/61d25386-ba52-9cf3-1050-bd3f77aab2d9/4_services3x.jpg/392x696bb.jpg" alt="Noor ekran" loading="lazy">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/13/1b/d9/131bd960-6235-c416-d9be-08241ca1acc9/Delivery3x.jpg/392x696bb.jpg" alt="Noor ekran" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Pill Plan -->
+      <div class="app">
+        <div>
+          <div class="app-head">
+            <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0b/4b/44/0b4b444c-60db-a355-4ca9-b89cb6417c5c/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" alt="Pill Plan" loading="lazy">
+            <div><h3>Pill Plan <span class="badge">US Top</span></h3><div class="meta" data-i18n="pill.meta">Dori eslatmasi · Sarafan Platform</div></div>
+          </div>
+          <ul>
+            <li data-i18n="pill.1">CustomPainter bilan maxsus kalendar vidjeti; Isolate yordamida ishga tushish vaqti 2 barobar qisqardi.</li>
+            <li data-i18n="pill.2">To'liq Firebase: Auth, Analytics, Crashlytics, Remote Config (A/B test).</li>
+            <li data-i18n="pill.3">RevenueCat obunalari, Bitrise/GitLab CI/CD.</li>
+            <li data-i18n="pill.4">AQSh Health &amp; Fitness bo'limida yuqori o'rinlarga chiqdi.</li>
+          </ul>
+          <div class="stack"><span>CustomPainter</span><span>Isolate</span><span>Firebase</span><span>RevenueCat</span><span>CI/CD</span></div>
+          <div class="stores">
+            <a class="store" href="https://apps.apple.com/uz/app/pill-reminder-for-family/id6483365093" target="_blank"><svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9s-2-.9-3.3-.9C6.1 6.9 4.6 7.9 3.7 9.4 2 12.4 3.3 16.9 5 19.3c.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8 2.1-1.2 2.9-2.4c.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-.9-2.4-3.9zM14 5.2c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3z"/></svg>App Store</a>
+          </div>
+        </div>
+        <div class="shots">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/99/5d/78/995d78e0-e3ac-de5d-bbe5-57c81353e605/1_English.png/392x696bb.jpg" alt="Pill Plan ekran" loading="lazy">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/78/b1/d2/78b1d252-2990-2f51-9d3f-9ba5970f3555/2_English.png/392x696bb.jpg" alt="Pill Plan ekran" loading="lazy">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3c/f8/ea/3cf8ea02-bdcb-e2fa-7779-9d5b87b922fa/5_English.png/392x696bb.jpg" alt="Pill Plan ekran" loading="lazy">
+        </div>
+      </div>
+
+      <!-- FoodZeen -->
+      <div class="app">
+        <div>
+          <div class="app-head">
+            <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/40/d6/58/40d6580c-6b50-c365-f092-49f764162b2c/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="FoodZeen" loading="lazy">
+            <div><h3>FoodZeen <span class="badge" data-i18n="food.badge">Shaxsiy loyiha</span></h3><div class="meta" data-i18n="food.meta">Ovqatlanish ilovasi · O'z loyiham</div></div>
+          </div>
+          <ul>
+            <li data-i18n="food.1">G'oyadan tortib chiqarishgacha noldan o'zim qurgan ovqatlanish ilovasi.</li>
+            <li data-i18n="food.2">Dizayn, arxitektura, backend integratsiyasi va qo'llab-quvvatlash — hammasi o'zimda.</li>
+          </ul>
+          <div class="stack"><span>Flutter</span><span>BLoC</span><span>Dio</span></div>
+          <div class="stores">
+            <a class="store" href="https://apps.apple.com/uz/app/foodzeen/id6755245761" target="_blank"><svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9s-2-.9-3.3-.9C6.1 6.9 4.6 7.9 3.7 9.4 2 12.4 3.3 16.9 5 19.3c.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8 2.1-1.2 2.9-2.4c.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-.9-2.4-3.9zM14 5.2c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3z"/></svg>App Store</a>
+          </div>
+        </div>
+        <div class="shots">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/40/06/ba400609-4fce-ec57-a711-97f3861c6262/01__U00281_U00292.png/392x696bb.jpg" alt="FoodZeen ekran" loading="lazy">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c7/93/9d/c7939df9-3037-0b1c-7447-0cf403642095/02__U00281_U00292.png/392x696bb.jpg" alt="FoodZeen ekran" loading="lazy">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/33/8d/35338df9-ca4d-38c3-5f40-439c27629f32/03__U00281_U00292.png/392x696bb.jpg" alt="FoodZeen ekran" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Codi Pick -->
+      <div class="app">
+        <div>
+          <div class="app-head">
+            <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/83/32/23/8332232a-5f24-1256-c81c-47f688d5a0b4/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="Cloz / Codi Pick" loading="lazy">
+            <div><h3>Cloz — AI Outfit Stylist</h3><div class="meta" data-i18n="cloz.meta">Kiyim tanlash · Sarafan Platform</div></div>
+          </div>
+          <ul>
+            <li data-i18n="cloz.1">Tashqi paketlarsiz, platform channels orqali AI fon olib tashlash funksiyasi.</li>
+            <li data-i18n="cloz.2">ChatGPT/Gemini API orqali uslub tavsiyalari — foydalanuvchi faolligi oshdi.</li>
+            <li data-i18n="cloz.3">Clean Architecture + BLoC, freezed; unit va widget testlar.</li>
+          </ul>
+          <div class="stack"><span>AI / LLM API</span><span>Clean Arch</span><span>freezed</span><span>Testing</span></div>
+          <div class="stores">
+            <a class="store" href="https://apps.apple.com/uz/app/codi-pick-ai-outfit-stylist/id6742770295" target="_blank"><svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9s-2-.9-3.3-.9C6.1 6.9 4.6 7.9 3.7 9.4 2 12.4 3.3 16.9 5 19.3c.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8 2.1-1.2 2.9-2.4c.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-.9-2.4-3.9zM14 5.2c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3z"/></svg>App Store</a>
+          </div>
+        </div>
+        <div class="shots">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a4/2f/9d/a42f9dbc-b248-3940-8f73-f0320d80429d/1284__U00d7_2778px-5.jpg/392x696bb.jpg" alt="Cloz ekran" loading="lazy">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/19/e6/7e/19e67eac-8d91-e433-a6b6-5b5c89ab53b8/1284__U00d7_2778px-7.jpg/392x696bb.jpg" alt="Cloz ekran" loading="lazy">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/34/1e/1f341ec2-ae6e-4729-7978-a1dc08e87816/1284__U00d7_2778px-3.jpg/392x696bb.jpg" alt="Cloz ekran" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Assetsy -->
+      <div class="app">
+        <div>
+          <div class="app-head">
+            <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7c/a9/2f/7ca92fae-ffce-fe16-e1e3-4f06d545b1a5/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.jpg" alt="Assetsy" loading="lazy">
+            <div><h3>Assetsy</h3><div class="meta" data-i18n="ast.meta">Inventar hisobi · Sarafan Platform</div></div>
+          </div>
+          <ul>
+            <li data-i18n="ast.1">Platform channels orqali barcode/QR skaner — mahsulot kiritish vaqti 70% qisqardi.</li>
+            <li data-i18n="ast.2">Bir bosishda PDF/Excel eksport; RevenueCat va AppsFlyer deep linking.</li>
+            <li data-i18n="ast.3">Firebase Crashlytics bilan barqarorlik monitoringi.</li>
+          </ul>
+          <div class="stack"><span>Barcode/QR</span><span>PDF/Excel</span><span>RevenueCat</span><span>AppsFlyer</span></div>
+          <div class="stores">
+            <a class="store" href="https://apps.apple.com/uz/app/assetsy-inventory-tracker-app/id6477699398" target="_blank"><svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9s-2-.9-3.3-.9C6.1 6.9 4.6 7.9 3.7 9.4 2 12.4 3.3 16.9 5 19.3c.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8 2.1-1.2 2.9-2.4c.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-.9-2.4-3.9zM14 5.2c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3z"/></svg>App Store</a>
+          </div>
+        </div>
+        <div class="shots">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/74/2a/9f/742a9f81-0ba3-0144-6765-f55615d144f2/1_APP_IPHONE_67_0.jpg/392x696bb.jpg" alt="Assetsy ekran" loading="lazy">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/27/01/a7270199-e3c5-04cd-cf29-7665b59e37e4/2_APP_IPHONE_67_1.jpg/392x696bb.jpg" alt="Assetsy ekran" loading="lazy">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/46/30/5846309b-6b61-4f7b-bc48-cdaf76b03ca5/3_APP_IPHONE_67_2.jpg/392x696bb.jpg" alt="Assetsy ekran" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Startup Studio -->
+      <div class="app">
+        <div>
+          <div class="app-head">
+            <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/17/71/64/177164a1-db2f-228a-793d-957e73c2f003/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/512x512bb.jpg" alt="Startup Studio" loading="lazy">
+            <div><h3>Startup Studio</h3><div class="meta">Sarafan Platform</div></div>
+          </div>
+          <ul>
+            <li data-i18n="ss.1">Firebase Auth va Hydrated BLoC orqali token saqlash — avtorizatsiya xatolari 60% kamaydi.</li>
+            <li data-i18n="ss.2">AppMetrica analitikasi; AutoRouter bilan navigatsiya.</li>
+          </ul>
+          <div class="stack"><span>Hydrated BLoC</span><span>Firebase Auth</span><span>AppMetrica</span><span>AutoRouter</span></div>
+          <div class="stores">
+            <a class="store" href="https://apps.apple.com/uz/app/startup-studio-app/id6475952555" target="_blank"><svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9s-2-.9-3.3-.9C6.1 6.9 4.6 7.9 3.7 9.4 2 12.4 3.3 16.9 5 19.3c.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8 2.1-1.2 2.9-2.4c.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-.9-2.4-3.9zM14 5.2c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3z"/></svg>App Store</a>
+          </div>
+        </div>
+        <div class="shots">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/14/28/28/142828ac-68a3-ea3d-aa9f-15f7f811f586/6432d340-9100-44b8-86c4-46792a1e0dd5_5.5-inch_Screenshot_1.png/392x696bb.png" alt="Startup Studio ekran" loading="lazy">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/ac/e7/c5/ace7c518-93c2-5005-da49-82b85c2ad1e9/a678fad8-1a2f-457b-b0ec-f9145c22583f_5.5-inch_Screenshot_2.png/392x696bb.png" alt="Startup Studio ekran" loading="lazy">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/96/5e/bd/965ebda1-fe36-abac-817f-a58b960cc6e0/743577e7-46a5-4784-ad43-e115c31aaeab_5.5-inch_Screenshot_3.png/392x696bb.png" alt="Startup Studio ekran" loading="lazy">
+        </div>
+      </div>
+
+      <!-- MODME -->
+      <div class="app">
+        <div>
+          <div class="app-head">
+            <div class="icon ph">M</div>
+            <div><h3>MODME Student</h3><div class="meta" data-i18n="modme.meta">Ta'lim platformasi · TexnoPos · Android</div></div>
+          </div>
+          <ul>
+            <li data-i18n="modme.1">Coroutines va Flow bilan reaktiv ma'lumot oqimlari va lifecycle-aware komponentlar.</li>
+            <li data-i18n="modme.2">Tarmoq so'rovlari uchun Retrofit, DI uchun Hilt.</li>
+          </ul>
+          <div class="stack"><span>Kotlin</span><span>Coroutines</span><span>Flow</span><span>Retrofit</span><span>Hilt</span></div>
+          <div class="stores">
+            <a class="store" href="https://play.google.com/store/apps/details?id=uz.modme.student" target="_blank"><svg viewBox="0 0 24 24"><path d="M3.6 1.8c-.3.3-.4.7-.4 1.2v18c0 .5.1.9.4 1.2l.1.1L13.8 12v-.2L3.7 1.7l-.1.1zM17.2 15.4l-3.4-3.4v-.2l3.4-3.4.1.1 4 2.3c1.1.6 1.1 1.7 0 2.3l-4 2.3h-.1zM17.3 15.3 13.8 12 3.6 22.2c.4.4 1 .4 1.7.1l12-6.9M17.3 8.7 5.3 1.8c-.7-.4-1.3-.4-1.7.1L13.8 12l3.5-3.3z"/></svg>Google Play</a>
+          </div>
+        </div>
+        <div class="shots empty">Android · Kotlin</div>
+      </div>
+
+      <!-- Smart Shop -->
+      <div class="app">
+        <div>
+          <div class="app-head">
+            <div class="icon ph">S</div>
+            <div><h3>Smart Shop</h3><div class="meta" data-i18n="shop.meta">Savdo ilovasi · TexnoPos · Android</div></div>
+          </div>
+          <ul>
+            <li data-i18n="shop.1">In-App Update API — foydalanuvchilar doim eng so'nggi versiyada.</li>
+            <li data-i18n="shop.2">Murakkab asinxron oqimlar uchun RxJava va Coroutines; Retrofit va Koin.</li>
+          </ul>
+          <div class="stack"><span>Kotlin</span><span>RxJava</span><span>Coroutines</span><span>Koin</span></div>
+          <div class="stores">
+            <a class="store" href="https://play.google.com/store/apps/details?id=uz.texnopos.smartshop" target="_blank"><svg viewBox="0 0 24 24"><path d="M3.6 1.8c-.3.3-.4.7-.4 1.2v18c0 .5.1.9.4 1.2l.1.1L13.8 12v-.2L3.7 1.7l-.1.1zM17.2 15.4l-3.4-3.4v-.2l3.4-3.4.1.1 4 2.3c1.1.6 1.1 1.7 0 2.3l-4 2.3h-.1zM17.3 15.3 13.8 12 3.6 22.2c.4.4 1 .4 1.7.1l12-6.9M17.3 8.7 5.3 1.8c-.7-.4-1.3-.4-1.7.1L13.8 12l3.5-3.3z"/></svg>Google Play</a>
+          </div>
+        </div>
+        <div class="shots empty">Android · Kotlin</div>
+      </div>
+
     </div>
   </div>
 </section>
 
+<!-- ============ TAJRIBA ============ -->
+<section id="experience">
+  <div class="wrap">
+    <h2 data-i18n="exp.h">Ish tajribasi</h2>
+    <p class="sub" data-i18n="exp.sub">Jami 4 yil 4 oy.</p>
+    <div class="timeline">
+      <div class="job">
+        <div class="when" data-i18n="exp.1.when">Fevral 2026 — hozirgacha</div>
+        <h3>Flutter Developer</h3>
+        <div class="co">Noor · Toshkent · <a href="https://noor.uz" target="_blank" style="color:var(--accent)">noor.uz</a></div>
+        <p data-i18n="exp.1.p">Noor Client va Noor Delivery ilovalari: multi-module arxitektura, real-time kargo kuzatuvi, to'lovlar, xaritalar, offline rejim.</p>
+      </div>
+      <div class="job">
+        <div class="when" data-i18n="exp.2.when">Oktabr 2023 — Fevral 2026</div>
+        <h3>Flutter Developer</h3>
+        <div class="co" data-i18n="exp.2.co">Sarafan Platform · Toshkent</div>
+        <p data-i18n="exp.2.p">Pill Plan, Cloz, Assetsy va Startup Studio ilovalarini ishlab chiqdim va App Store'da chiqardim. Firebase, RevenueCat, AI integratsiyalari, CI/CD.</p>
+      </div>
+      <div class="job">
+        <div class="when" data-i18n="exp.3.when">May 2022 — Avgust 2023</div>
+        <h3>Android Developer</h3>
+        <div class="co">TexnoPos · Nukus · <a href="https://texnopos.uz" target="_blank" style="color:var(--accent)">texnopos.uz</a></div>
+        <p data-i18n="exp.3.p">MODME va Smart Shop Android ilovalari: Kotlin, Coroutines/Flow, RxJava, Retrofit, Hilt/Koin.</p>
+      </div>
+      <div class="job">
+        <div class="when">2022</div>
+        <h3 data-i18n="edu.h">Ta'lim</h3>
+        <div class="co" data-i18n="edu.co">QMU — oliy ma'lumot · Gita Dasturchilar Akademiyasi — Android &amp; Flutter Bootcamp</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KO'NIKMALAR ============ -->
+<section id="skills">
+  <div class="wrap">
+    <h2 data-i18n="nav.skills">Ko'nikmalar</h2>
+    <p class="sub" data-i18n="sk.sub">Ishimda har kuni foydalanadigan texnologiyalar.</p>
+    <div class="skills-grid">
+      <div class="sk"><h4 data-i18n="sk.1">Tillar va platformalar</h4><div class="chips"><span>Flutter</span><span>Dart</span><span>Android</span><span>Kotlin</span><span>Swift</span></div></div>
+      <div class="sk"><h4>State management</h4><div class="chips"><span>BLoC</span><span>Cubit</span><span>Hydrated BLoC</span><span>Flow</span><span>Coroutines</span><span>RxJava</span></div></div>
+      <div class="sk"><h4 data-i18n="sk.3">Tarmoq va ma'lumotlar</h4><div class="chips"><span>Dio</span><span>Retrofit</span><span>REST API</span><span>WebSocket</span><span>freezed</span></div></div>
+      <div class="sk"><h4 data-i18n="sk.4">Servislar</h4><div class="chips"><span>Firebase</span><span>RevenueCat</span><span>AppMetrica</span><span>AppsFlyer</span></div></div>
+      <div class="sk"><h4 data-i18n="sk.5">Arxitektura va vositalar</h4><div class="chips"><span>Clean Architecture</span><span>Hilt</span><span>Koin</span><span>AutoRouter</span><span>GoRouter</span><span>Isolate</span><span>CustomPainter</span></div></div>
+      <div class="sk"><h4>DevOps</h4><div class="chips"><span>Git</span><span>CI/CD</span><span>Bitrise</span><span>GitLab</span></div></div>
+      <div class="sk"><h4 data-i18n="sk.lang">Tillar</h4><div class="chips"><span data-i18n="sk.l1">O'zbek — ona tili</span><span data-i18n="sk.l2">Rus — C1</span><span data-i18n="sk.l3">Ingliz — B2</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ALOQA ============ -->
 <section id="contact" class="contact">
   <div class="wrap">
-    <h2>Aloqa</h2>
-    <p>Loyiha yoki hamkorlik bo'yicha bemalol yozing!</p>
+    <h2 data-i18n="nav.contact">Aloqa</h2>
+    <p class="sub" data-i18n="ct.sub">Yangi loyiha yoki ish taklifi bo'yicha bemalol yozing. Toshkent.</p>
     <div class="socials">
-      <!-- O'Z MA'LUMOTLARINGIZNI QO'YING -->
+      <a href="https://t.me/dimamamann" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2l-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3z"/></svg>@dimamamann</a>
+      <a href="mailto:dimamamanov37@gmail.com">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>dimamamanov37@gmail.com</a>
+      <a href="tel:+998906601314">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>+998 90 660 13 14</a>
       <a href="https://github.com/Dimamaman" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>GitHub</a>
-      <a href="https://t.me/USERNAME" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2l-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3z"/></svg>Telegram</a>
-      <a href="https://linkedin.com/in/USERNAME" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>LinkedIn</a>
-      <a href="mailto:EMAIL@gmail.com">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>Email</a>
     </div>
   </div>
 </section>
 
-<footer>© 2026 Dimamaman · GitHub Pages'da joylashtirilgan</footer>
+<footer>© 2026 Mamanov Dinmuhammad · Flutter Developer</footer>
 
+<script>
+  // Rasm yuklanmasa, uni yashiramiz
+  document.querySelectorAll('.shots img').forEach(function(img){
+    img.addEventListener('error', function(){ img.style.display='none'; });
+  });
+  document.querySelectorAll('img.icon').forEach(function(img){
+    img.addEventListener('error', function(){
+      var d=document.createElement('div'); d.className='icon ph'; d.textContent=(img.alt||'?')[0]; img.replaceWith(d);
+    });
+  });
+
+  // ===== Tillar (UZ / RU / EN) =====
+  var I18N = {
+ "uz": {
+  "nav.projects": "Loyihalar",
+  "nav.exp": "Tajriba",
+  "nav.skills": "Ko'nikmalar",
+  "nav.contact": "Aloqa",
+  "hero.tag": "Salom, men —",
+  "hero.p": "Mobil ilovalar yaratishni yaxshi ko'raman: g'oyani har kuni odamlar foydalanadigan haqiqiy ilovaga aylantiraman. 4 yildan ortiq tajriba, App Store va Google Play'da chiqarilgan o'nga yaqin ilova.",
+  "hero.btn1": "Loyihalarni ko'rish",
+  "hero.btn2": "Telegram'da yozish",
+  "st.1": "yillik tajriba",
+  "st.2": "chiqarilgan ilova",
+  "st.3": "faol foydalanuvchi (Noor)",
+  "sec.projects.sub": "Men ishlab chiqqan va do'konlarda chiqargan ilovalar.",
+  "noor.meta": "Yetkazib berish va kargo · Noor",
+  "noor.1": "Multi-module arxitektura (feature modullar + umumiy paketlar), BLoC va Dio.",
+  "noor.2": "Kargo modulini noldan qurdim: buyurtmalar, marshrut hisoblash, WebSocket orqali real-time kuzatuv.",
+  "noor.3": "To'lov va xarita xizmatlari, offline rejim, FCM push bildirishnomalar.",
+  "noor.4": "Noor Client 2.1K+, Noor Delivery ~1K faol foydalanuvchi.",
+  "pill.meta": "Dori eslatmasi · Sarafan Platform",
+  "pill.1": "CustomPainter bilan maxsus kalendar vidjeti; Isolate yordamida ishga tushish vaqti 2 barobar qisqardi.",
+  "pill.2": "To'liq Firebase: Auth, Analytics, Crashlytics, Remote Config (A/B test).",
+  "pill.3": "RevenueCat obunalari, Bitrise/GitLab CI/CD.",
+  "pill.4": "AQSh Health &amp; Fitness bo'limida yuqori o'rinlarga chiqdi.",
+  "food.badge": "Shaxsiy loyiha",
+  "food.meta": "Ovqatlanish ilovasi · O'z loyiham",
+  "food.1": "G'oyadan tortib chiqarishgacha noldan o'zim qurgan ovqatlanish ilovasi.",
+  "food.2": "Dizayn, arxitektura, backend integratsiyasi va qo'llab-quvvatlash — hammasi o'zimda.",
+  "cloz.meta": "Kiyim tanlash · Sarafan Platform",
+  "cloz.1": "Tashqi paketlarsiz, platform channels orqali AI fon olib tashlash funksiyasi.",
+  "cloz.2": "ChatGPT/Gemini API orqali uslub tavsiyalari — foydalanuvchi faolligi oshdi.",
+  "cloz.3": "Clean Architecture + BLoC, freezed; unit va widget testlar.",
+  "ast.meta": "Inventar hisobi · Sarafan Platform",
+  "ast.1": "Platform channels orqali barcode/QR skaner — mahsulot kiritish vaqti 70% qisqardi.",
+  "ast.2": "Bir bosishda PDF/Excel eksport; RevenueCat va AppsFlyer deep linking.",
+  "ast.3": "Firebase Crashlytics bilan barqarorlik monitoringi.",
+  "ss.1": "Firebase Auth va Hydrated BLoC orqali token saqlash — avtorizatsiya xatolari 60% kamaydi.",
+  "ss.2": "AppMetrica analitikasi; AutoRouter bilan navigatsiya.",
+  "modme.meta": "Ta'lim platformasi · TexnoPos · Android",
+  "modme.1": "Coroutines va Flow bilan reaktiv ma'lumot oqimlari va lifecycle-aware komponentlar.",
+  "modme.2": "Tarmoq so'rovlari uchun Retrofit, DI uchun Hilt.",
+  "shop.meta": "Savdo ilovasi · TexnoPos · Android",
+  "shop.1": "In-App Update API — foydalanuvchilar doim eng so'nggi versiyada.",
+  "shop.2": "Murakkab asinxron oqimlar uchun RxJava va Coroutines; Retrofit va Koin.",
+  "exp.h": "Ish tajribasi",
+  "exp.sub": "Jami 4 yil 4 oy.",
+  "exp.1.when": "Fevral 2026 — hozirgacha",
+  "exp.1.p": "Noor Client va Noor Delivery ilovalari: multi-module arxitektura, real-time kargo kuzatuvi, to'lovlar, xaritalar, offline rejim.",
+  "exp.2.when": "Oktabr 2023 — Fevral 2026",
+  "exp.2.co": "Sarafan Platform · Toshkent",
+  "exp.2.p": "Pill Plan, Cloz, Assetsy va Startup Studio ilovalarini ishlab chiqdim va App Store'da chiqardim. Firebase, RevenueCat, AI integratsiyalari, CI/CD.",
+  "exp.3.when": "May 2022 — Avgust 2023",
+  "exp.3.p": "MODME va Smart Shop Android ilovalari: Kotlin, Coroutines/Flow, RxJava, Retrofit, Hilt/Koin.",
+  "edu.h": "Ta'lim",
+  "edu.co": "QMU — oliy ma'lumot · Gita Dasturchilar Akademiyasi — Android &amp; Flutter Bootcamp",
+  "sk.sub": "Ishimda har kuni foydalanadigan texnologiyalar.",
+  "sk.1": "Tillar va platformalar",
+  "sk.3": "Tarmoq va ma'lumotlar",
+  "sk.4": "Servislar",
+  "sk.5": "Arxitektura va vositalar",
+  "sk.lang": "Tillar",
+  "sk.l1": "O'zbek — ona tili",
+  "sk.l2": "Rus — C1",
+  "sk.l3": "Ingliz — B2",
+  "ct.sub": "Yangi loyiha yoki ish taklifi bo'yicha bemalol yozing. Toshkent.",
+  "_title": "Mamanov Dinmuhammad — Flutter Developer",
+  "_name": "Mamanov Dinmuhammad"
+ },
+ "ru": {
+  "nav.projects": "Проекты",
+  "nav.exp": "Опыт",
+  "nav.skills": "Навыки",
+  "nav.contact": "Контакты",
+  "hero.tag": "Привет, я —",
+  "hero.p": "Люблю создавать мобильные приложения: превращаю идею в реальный продукт, которым люди пользуются каждый день. Более 4 лет опыта и около десяти приложений в App Store и Google Play.",
+  "hero.btn1": "Смотреть проекты",
+  "hero.btn2": "Написать в Telegram",
+  "st.1": "лет опыта",
+  "st.2": "опубликованных приложений",
+  "st.3": "активных пользователей (Noor)",
+  "sec.projects.sub": "Приложения, которые я разработал и опубликовал в магазинах.",
+  "noor.meta": "Доставка и карго · Noor",
+  "noor.1": "Мультимодульная архитектура (feature-модули + общие пакеты), BLoC и Dio.",
+  "noor.2": "Построил модуль Cargo с нуля: заказы, расчёт маршрута, отслеживание в реальном времени через WebSocket.",
+  "noor.3": "Платежи и карты, офлайн-режим, push-уведомления FCM.",
+  "noor.4": "Noor Client — 2.1K+, Noor Delivery — ~1K активных пользователей.",
+  "pill.meta": "Напоминание о лекарствах · Sarafan Platform",
+  "pill.1": "Кастомный календарь на CustomPainter; время запуска сократил в 2 раза с помощью Isolate.",
+  "pill.2": "Полный стек Firebase: Auth, Analytics, Crashlytics, Remote Config (A/B-тесты).",
+  "pill.3": "Подписки RevenueCat, CI/CD на Bitrise/GitLab.",
+  "pill.4": "Вышло в топ категории Health &amp; Fitness в США.",
+  "food.badge": "Личный проект",
+  "food.meta": "Приложение о питании · Мой проект",
+  "food.1": "Приложение о питании, которое я создал с нуля — от идеи до релиза.",
+  "food.2": "Дизайн, архитектура, интеграция с бэкендом и поддержка — всё на мне.",
+  "cloz.meta": "Подбор образов · Sarafan Platform",
+  "cloz.1": "AI-удаление фона через platform channels без внешних пакетов.",
+  "cloz.2": "Рекомендации стиля через API ChatGPT/Gemini — рост вовлечённости.",
+  "cloz.3": "Clean Architecture + BLoC, freezed; unit- и widget-тесты.",
+  "ast.meta": "Учёт инвентаря · Sarafan Platform",
+  "ast.1": "Сканер штрихкодов/QR через platform channels — ввод товаров быстрее на 70%.",
+  "ast.2": "Экспорт в PDF/Excel в один клик; RevenueCat и deep linking AppsFlyer.",
+  "ast.3": "Мониторинг стабильности через Firebase Crashlytics.",
+  "ss.1": "Firebase Auth и хранение токена через Hydrated BLoC — ошибок авторизации на 60% меньше.",
+  "ss.2": "Аналитика AppMetrica; навигация на AutoRouter.",
+  "modme.meta": "Образовательная платформа · TexnoPos · Android",
+  "modme.1": "Реактивные потоки данных и lifecycle-aware компоненты на Coroutines и Flow.",
+  "modme.2": "Retrofit для сетевых запросов, Hilt для DI.",
+  "shop.meta": "Приложение для торговли · TexnoPos · Android",
+  "shop.1": "In-App Update API — пользователи всегда на последней версии.",
+  "shop.2": "RxJava и Coroutines для сложных асинхронных потоков; Retrofit и Koin.",
+  "exp.h": "Опыт работы",
+  "exp.sub": "Всего 4 года 4 месяца.",
+  "exp.1.when": "Февраль 2026 — сейчас",
+  "exp.1.p": "Приложения Noor Client и Noor Delivery: мультимодульная архитектура, отслеживание карго в реальном времени, платежи, карты, офлайн-режим.",
+  "exp.2.when": "Октябрь 2023 — Февраль 2026",
+  "exp.2.co": "Sarafan Platform · Ташкент",
+  "exp.2.p": "Разработал и опубликовал в App Store Pill Plan, Cloz, Assetsy и Startup Studio. Firebase, RevenueCat, AI-интеграции, CI/CD.",
+  "exp.3.when": "Май 2022 — Август 2023",
+  "exp.3.p": "Android-приложения MODME и Smart Shop: Kotlin, Coroutines/Flow, RxJava, Retrofit, Hilt/Koin.",
+  "edu.h": "Образование",
+  "edu.co": "QMU — высшее образование · Академия программистов Gita — Android &amp; Flutter Bootcamp",
+  "sk.sub": "Технологии, которые я использую каждый день.",
+  "sk.1": "Языки и платформы",
+  "sk.3": "Сеть и данные",
+  "sk.4": "Сервисы",
+  "sk.5": "Архитектура и инструменты",
+  "sk.lang": "Языки",
+  "sk.l1": "Узбекский — родной",
+  "sk.l2": "Русский — C1",
+  "sk.l3": "Английский — B2",
+  "ct.sub": "Пишите по поводу нового проекта или предложения о работе. Ташкент.",
+  "_title": "Маманов Динмухаммад — Flutter Developer",
+  "_name": "Маманов Динмухаммад"
+ },
+ "en": {
+  "nav.projects": "Projects",
+  "nav.exp": "Experience",
+  "nav.skills": "Skills",
+  "nav.contact": "Contact",
+  "hero.tag": "Hi, I'm —",
+  "hero.p": "I love building mobile apps: turning an idea into a real product people use every day. 4+ years of experience and around ten apps published on the App Store and Google Play.",
+  "hero.btn1": "View projects",
+  "hero.btn2": "Message on Telegram",
+  "st.1": "years of experience",
+  "st.2": "published apps",
+  "st.3": "active users (Noor)",
+  "sec.projects.sub": "Apps I built and shipped to the stores.",
+  "noor.meta": "Delivery &amp; cargo · Noor",
+  "noor.1": "Multi-module architecture (feature modules + shared packages), BLoC and Dio.",
+  "noor.2": "Built the Cargo module from scratch: orders, route calculation, real-time tracking over WebSocket.",
+  "noor.3": "Payments and maps, offline mode, FCM push notifications.",
+  "noor.4": "Noor Client 2.1K+, Noor Delivery ~1K active users.",
+  "pill.meta": "Medication reminder · Sarafan Platform",
+  "pill.1": "Custom calendar widget with CustomPainter; cut startup time 2x using Isolate.",
+  "pill.2": "Full Firebase stack: Auth, Analytics, Crashlytics, Remote Config (A/B testing).",
+  "pill.3": "RevenueCat subscriptions, Bitrise/GitLab CI/CD.",
+  "pill.4": "Reached the top of US Health &amp; Fitness.",
+  "food.badge": "Personal project",
+  "food.meta": "Nutrition app · My own project",
+  "food.1": "A nutrition app I built from scratch, from idea to release.",
+  "food.2": "Design, architecture, backend integration and maintenance — all done by me.",
+  "cloz.meta": "Outfit planner · Sarafan Platform",
+  "cloz.1": "AI background removal via platform channels, no external packages.",
+  "cloz.2": "Style recommendations via ChatGPT/Gemini APIs — boosted engagement.",
+  "cloz.3": "Clean Architecture + BLoC, freezed; unit and widget tests.",
+  "ast.meta": "Inventory tracking · Sarafan Platform",
+  "ast.1": "Barcode/QR scanning via platform channels — cut product entry time by 70%.",
+  "ast.2": "One-click PDF/Excel export; RevenueCat and AppsFlyer deep linking.",
+  "ast.3": "Stability monitoring with Firebase Crashlytics.",
+  "ss.1": "Firebase Auth with token persistence via Hydrated BLoC — 60% fewer auth errors.",
+  "ss.2": "AppMetrica analytics; navigation with AutoRouter.",
+  "modme.meta": "Education platform · TexnoPos · Android",
+  "modme.1": "Reactive data streams and lifecycle-aware components with Coroutines and Flow.",
+  "modme.2": "Retrofit for networking, Hilt for DI.",
+  "shop.meta": "Retail app · TexnoPos · Android",
+  "shop.1": "In-App Update API — users always run the latest version.",
+  "shop.2": "RxJava and Coroutines for complex async streams; Retrofit and Koin.",
+  "exp.h": "Work experience",
+  "exp.sub": "4 years 4 months in total.",
+  "exp.1.when": "February 2026 — present",
+  "exp.1.p": "Noor Client and Noor Delivery apps: multi-module architecture, real-time cargo tracking, payments, maps, offline mode.",
+  "exp.2.when": "October 2023 — February 2026",
+  "exp.2.co": "Sarafan Platform · Tashkent",
+  "exp.2.p": "Built and shipped Pill Plan, Cloz, Assetsy and Startup Studio to the App Store. Firebase, RevenueCat, AI integrations, CI/CD.",
+  "exp.3.when": "May 2022 — August 2023",
+  "exp.3.p": "MODME and Smart Shop Android apps: Kotlin, Coroutines/Flow, RxJava, Retrofit, Hilt/Koin.",
+  "edu.h": "Education",
+  "edu.co": "QMU — higher education · Gita Programmers Academy — Android &amp; Flutter Bootcamp",
+  "sk.sub": "Technologies I use every day.",
+  "sk.1": "Languages &amp; platforms",
+  "sk.3": "Networking &amp; data",
+  "sk.4": "Services",
+  "sk.5": "Architecture &amp; tools",
+  "sk.lang": "Languages",
+  "sk.l1": "Uzbek — native",
+  "sk.l2": "Russian — C1",
+  "sk.l3": "English — B2",
+  "ct.sub": "Feel free to reach out about a new project or job offer. Tashkent.",
+  "_title": "Dinmuhammad Mamanov — Flutter Developer",
+  "_name": "Dinmuhammad Mamanov"
+ }
+};
+  function setLang(l){
+    if(!I18N[l]) l='uz';
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var v=I18N[l][el.getAttribute('data-i18n')]; if(v!==undefined) el.innerHTML=v;
+    });
+    document.title=I18N[l]._title;
+    document.documentElement.lang=l;
+    document.querySelectorAll('.lang-sw button').forEach(function(b){ b.classList.toggle('on', b.dataset.lang===l); });
+    try{ localStorage.setItem('lang', l); }catch(e){}
+  }
+  document.querySelectorAll('.lang-sw button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+  });
+  var saved=null; try{ saved=localStorage.getItem('lang'); }catch(e){}
+  var nav=(navigator.language||'uz').slice(0,2);
+  setLang(saved || (nav==='ru'||nav==='en' ? nav : 'uz'));
+</script>
 </body>
 </html>
